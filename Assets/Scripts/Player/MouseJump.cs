@@ -4,23 +4,22 @@ using UnityEngine.UIElements;
 public class MouseJump : MonoBehaviour
 {
     [SerializeField] float jumpForce;
-    [SerializeField] float lineLength;
+    [SerializeField] bool drawLine;
     LineRenderer lr;
     Rigidbody2D rgbd;
+    float lineLength = 1;
     int amountJumps = 0;
     bool isGrounded = false;
+    bool isCreateLineRenderer = false;
     void Start()
     {
-        lr = createLineRenderer();
         rgbd = gameObject.GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        lr.SetPosition(0, transform.position);
-        lr.SetPosition(1, transform.position + getMouseDirection() * lineLength);
-
-        if (Input.GetMouseButtonDown(0)) jump();
+        if(drawLine) drawLineToMouse();
+        if(Input.GetMouseButtonDown(0)) jump();
     }
 
     void OnCollisionEnter2D(Collision2D collision)  //TODO: Chekck if real ground, not a wall or ceiling;
@@ -41,16 +40,16 @@ public class MouseJump : MonoBehaviour
         return (worldMousePos - transform.position).normalized;
     }
 
-    LineRenderer createLineRenderer()   //Line properties
+    void createLineRenderer()   //Line properties
     {
-        LineRenderer lr = gameObject.AddComponent<LineRenderer>();
-        lr.positionCount = 2;
-        lr.startWidth = 0.1f;
-        lr.endWidth = 0.1f;
-        lr.material = new Material(Shader.Find("Sprites/Default"));
-        lr.startColor = Color.red;
-        lr.endColor = Color.red;
-        return lr;
+        LineRenderer line = gameObject.AddComponent<LineRenderer>();
+        line.positionCount = 2;
+        line.startWidth = 0.1f;
+        line.endWidth = 0.1f;
+        line.material = new Material(Shader.Find("Sprites/Default"));
+        line.startColor = Color.red;
+        line.endColor = Color.red;
+        lr = line;
     }
 
     void jump()
@@ -61,6 +60,17 @@ public class MouseJump : MonoBehaviour
             Vector3 direction = getMouseDirection();
             rgbd.linearVelocity = new Vector2(direction.x * jumpForce, direction.y * jumpForce);
         }
+    }
+
+    void drawLineToMouse()
+    {
+        if(!isCreateLineRenderer)
+        {
+            isCreateLineRenderer = true;
+            createLineRenderer();
+        } 
+        lr.SetPosition(0, transform.position);
+        lr.SetPosition(1, transform.position + getMouseDirection() * lineLength);
     }
 
     public int getAmountJumps() //Other scripts may access
