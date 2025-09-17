@@ -15,4 +15,6 @@ public class CameraFollow : MonoBehaviour
         Vector3 newPosition = Vector3.Lerp(transform.position, target.position + offset, speed * Time.deltaTime);
         transform.position = newPosition;
     }
+
+    //TODO: Make smooth camera follow/offset after mouse, so player can see more to direction he wants jump to
 }
