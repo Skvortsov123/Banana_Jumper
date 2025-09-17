@@ -1184,7 +1184,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 10
-  drawLine: 0
+  jumpForceDelta: 5
+  dynamicJumpForceSpeed: 10
+  lineLength: 1
+  drawLine: 1
 --- !u!1 &1300864757
 GameObject:
   m_ObjectHideFlags: 0
