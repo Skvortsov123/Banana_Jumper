@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -5,14 +6,16 @@ public class MouseJump : MonoBehaviour
 {
     [SerializeField] float jumpForce;
     [SerializeField] float jumpForceDelta;
-    [SerializeField] float dynamicJumpForceSpeed;   //How fast line change direction
+    [SerializeField] float jumpForceSpeed;   //How fast line change direction
     [SerializeField] float lineLength;
+    [SerializeField] float isGroundedDelay;
     [SerializeField] bool drawLine;
     Rigidbody2D rgbd;
     LineRenderer line;
     float dynamicJumpForce;
     float timerDynamicJump;
     float dynamicLineLength;
+    float lastTimeIsGrounded;
     int amountJumps = 0;
     bool isGrounded = false;
     bool isMouseDown = false;
@@ -21,6 +24,7 @@ public class MouseJump : MonoBehaviour
     {
         rgbd = gameObject.GetComponent<Rigidbody2D>();
         line = gameObject.AddComponent<LineRenderer>(); //Line properties
+        line.sortingOrder = 1;
         line.positionCount = 2;
         line.startWidth = 0.1f;
         line.endWidth = 0.1f;
@@ -36,19 +40,22 @@ public class MouseJump : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             isMouseDown = true;
-            timerDynamicJump = Time.time;
-            line.enabled = true;
+            resetDynamicJumpForce();
         }
         if (Input.GetMouseButtonUp(0))
         {
             isMouseDown = false;
             jump();
-            line.enabled = false;
         }
-        if (isMouseDown)
+        if (isMouseDown && isGroundedDelayed())  //Make isGroundedDelayed, so it wait 0.5 seconds before you can not jump
         {
-            dynamicJumpForce = jumpForce - jumpForceDelta;
             updateDynamicJumpForce();
+            line.enabled = true;
+        }
+        else
+        {
+            line.enabled = false;
+            resetDynamicJumpForce();
         }
     }
 
@@ -62,10 +69,32 @@ public class MouseJump : MonoBehaviour
         isGrounded = false;
     }
 
+    bool isGroundedDelayed()
+    {
+        if (isGrounded)
+        {
+            lastTimeIsGrounded = Time.time;
+        }
+        if (lastTimeIsGrounded + isGroundedDelay > Time.time)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     void updateDynamicJumpForce()  //onTick
     {
-        dynamicJumpForce = jumpForce + Mathf.Sin(timerDynamicJump - Time.time * dynamicJumpForceSpeed) * jumpForceDelta;
+        print((Time.time - timerDynamicJump) * jumpForceSpeed);
+        dynamicJumpForce = jumpForce + Mathf.Sin((Time.time - timerDynamicJump) * jumpForceSpeed + Mathf.PI*1.5f) * jumpForceDelta;
         dynamicLineLength = dynamicJumpForce*lineLength*0.1f;  
+    }
+
+    void resetDynamicJumpForce()
+    {
+        timerDynamicJump = Time.time;
     }
 
     Vector3 getMouseDirection()    //Returns normalized direction. normalized = enhetscircel
