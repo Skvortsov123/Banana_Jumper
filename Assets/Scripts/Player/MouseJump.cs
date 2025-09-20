@@ -47,7 +47,7 @@ public class MouseJump : MonoBehaviour
             isMouseDown = false;
             jump();
         }
-        if (isMouseDown && isGroundedDelayed())  //Make isGroundedDelayed, so it wait 0.5 seconds before you can not jump
+        if (isMouseDown && isGrounded)//isGroundedDelayed())
         {
             updateDynamicJumpForce();
             line.enabled = true;
@@ -59,13 +59,15 @@ public class MouseJump : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)  //TODO: Chekck if real ground, not a wall or ceiling;
+    void OnTriggerEnter2D(Collider2D collision)  //TODO: Bug, sometimes banan dont want to jump. May be OnCollisionEnter2D dont trigger
     {
+        //print("CollisionEnter");
         isGrounded = true;
     }
 
-    void OnCollisionExit2D(Collision2D collision)
+    void OnTriggerExit2D(Collider2D collision)   //TODO: Make trigger around banana, so if something nerby banana can jump, not timer!
     {
+        //print("CollisionExit");
         isGrounded = false;
     }
 
@@ -87,7 +89,6 @@ public class MouseJump : MonoBehaviour
 
     void updateDynamicJumpForce()  //onTick
     {
-        print((Time.time - timerDynamicJump) * jumpForceSpeed);
         dynamicJumpForce = jumpForce + Mathf.Sin((Time.time - timerDynamicJump) * jumpForceSpeed + Mathf.PI*1.5f) * jumpForceDelta;
         dynamicLineLength = dynamicJumpForce*lineLength*0.1f;  
     }
