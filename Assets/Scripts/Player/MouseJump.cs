@@ -8,7 +8,7 @@ public class MouseJump : MonoBehaviour
     [SerializeField] float jumpForceDelta;
     [SerializeField] float jumpForceSpeed;   //How fast line change direction
     [SerializeField] float lineLength;
-    [SerializeField] float isGroundedDelay;
+    [SerializeField] float isGroundedDelay; //Make visual line not disapear right away
     [SerializeField] bool drawLine;
     Rigidbody2D rgbd;
     LineRenderer line;
@@ -59,12 +59,12 @@ public class MouseJump : MonoBehaviour
         }
     }
 
-    void OnTriggerStay2D(Collider2D collision)  //TODO: Bug, sometimes banan dont want to jump. May be OnCollisionEnter2D dont trigger
+    void OnTriggerStay2D(Collider2D collision)
     {
         isGrounded = true;
     }
 
-    void OnTriggerExit2D(Collider2D collision)   //TODO: Make trigger around banana, so if something nerby banana can jump, not timer!
+    void OnTriggerExit2D(Collider2D collision)
     {
         isGrounded = false;
     }
