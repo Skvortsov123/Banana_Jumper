@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class QuestChecker : MonoBehaviour
+public class FinishChecker : MonoBehaviour
 {
     [SerializeField] GameObject Button_nextLevel;
 

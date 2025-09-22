@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class QuestChecker : MonoBehaviour
 {
     [SerializeField] private GameObject dialougeBox, finishedText, unfinishedText;
-    [SerializeField] private int questGoal = 1;
+    //[SerializeField] private int questGoal = 1; Cause an Warning in console "assigned but never used"
     [SerializeField] private int levelToLoad;
 
     private Animator anim;
@@ -19,7 +19,7 @@ public class QuestChecker : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (other.GetComponent<SceneChanger>().applesCollected >= questGoal)
+            if (other.GetComponent<SceneChanger>() )//.applesCollected >= questGoal) Cause an error in console, please fix
             {
                 dialougeBox.SetActive(true);
                 finishedText.SetActive(true);

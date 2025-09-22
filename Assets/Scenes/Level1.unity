@@ -932,7 +932,7 @@ GameObject:
   - component: {fileID: 291417415}
   - component: {fileID: 291417417}
   m_Layer: 0
-  m_Name: QuestChecker
+  m_Name: FinishChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
