@@ -1,9 +1,11 @@
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
 public class LoadLevelOnClick : MonoBehaviour
 {
+    [SerializeField] string levelNameToLoad;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,8 +20,7 @@ public class LoadLevelOnClick : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log("Object clicked!");
-        LoadLevel("Level2");
+        LoadLevel(levelNameToLoad);
     }
 
     void LoadLevel(string levelName)
