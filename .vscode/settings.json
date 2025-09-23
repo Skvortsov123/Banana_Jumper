@@ -66,5 +66,5 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj"
     },
-    "dotnet.defaultSolution": "BananaJumper.sln"
+    "dotnet.defaultSolution": "Banana_Jumper.sln"
 }
