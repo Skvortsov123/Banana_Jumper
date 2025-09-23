@@ -9,16 +9,6 @@ public class FinishChecker : MonoBehaviour
     private bool levelIsLoading = false;
 
 
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -29,7 +19,7 @@ public class FinishChecker : MonoBehaviour
                 dialougeBox.SetActive(true);
                 finishedText.SetActive(true);
                 Button_nextLevel.SetActive(true);
-                
+                GetComponent<BoxCollider2D>().enabled = false;
                 levelIsLoading = true;
             }
             else
@@ -37,10 +27,9 @@ public class FinishChecker : MonoBehaviour
                 dialougeBox.SetActive(true);
                 unfinishedText.SetActive(true);
             }
-            GetComponent<BoxCollider2D>().enabled = false;
         }
         
-
+        
     }
 
     private void OnTriggerExit2D(Collider2D other)

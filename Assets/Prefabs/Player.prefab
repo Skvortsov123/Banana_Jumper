@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8231343955787659305}
   - component: {fileID: 7005797572538512283}
   - component: {fileID: 3547558743601257119}
+  - component: {fileID: -4858977351141765011}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -292,3 +293,16 @@ MonoBehaviour:
   lineLength: 1
   isGroundedDelay: 0.2
   drawLine: 1
+--- !u!114 &-4858977351141765011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759793871287964235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a9177c7a675c3a4487667ed50f9e634, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gemsCollected: 0
