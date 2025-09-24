@@ -10,8 +10,10 @@ public class MouseJump : MonoBehaviour
     [SerializeField] float lineLength;
     [SerializeField] float isGroundedDelay; //Make visual line not disapear right away
     [SerializeField] bool drawLine;
+    [SerializeField] AudioClip jumpSound;
     Rigidbody2D rgbd;
     LineRenderer line;
+    AudioSource audioSource;
     float dynamicJumpForce;
     float timerDynamicJump;
     float dynamicLineLength;
@@ -22,6 +24,7 @@ public class MouseJump : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         rgbd = gameObject.GetComponent<Rigidbody2D>();
         line = gameObject.AddComponent<LineRenderer>(); //Line properties
         line.sortingOrder = 1;
@@ -111,6 +114,7 @@ public class MouseJump : MonoBehaviour
             amountJumps++;
             Vector3 direction = getMouseDirection();
             rgbd.linearVelocity = new Vector2(direction.x * dynamicJumpForce, direction.y * dynamicJumpForce);
+            audioSource.PlayOneShot(jumpSound, 0.5f);
         }
     }
 
