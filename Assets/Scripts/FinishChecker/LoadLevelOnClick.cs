@@ -23,7 +23,7 @@ public class LoadLevelOnClick : MonoBehaviour
         LoadLevel(levelNameToLoad);
     }
 
-    void LoadLevel(string levelName)
+    public void LoadLevel(string levelName)
     {
         SceneManager.LoadScene(levelName); // use your scene name
     }
