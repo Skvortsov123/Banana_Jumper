@@ -930,7 +930,7 @@ GameObject:
   m_Component:
   - component: {fileID: 291417416}
   - component: {fileID: 291417415}
-  - component: {fileID: 291417417}
+  - component: {fileID: 291417418}
   m_Layer: 0
   m_Name: FinishChecker
   m_TagString: Untagged
@@ -1000,7 +1000,7 @@ Transform:
   - {fileID: 809241044}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &291417417
+--- !u!114 &291417418
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1009,7 +1009,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 291417414}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 198ed17487964408e8c99672744c0874, type: 3}
+  m_Script: {fileID: 11500000, guid: d6f90b90526543079b05391804bb048a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Button_nextLevel: {fileID: 809241043}
