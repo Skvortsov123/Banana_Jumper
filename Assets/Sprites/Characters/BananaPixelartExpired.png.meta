@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9806dd00dccd135d0b4f841adf53f01e
+guid: 412bdced5c5548b9db5ebdb0617c9c54
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8528272030221771813
-    second: Board1_0
+      213: -1709649977788797054
+    second: BananaPixelartExpired_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Board1_0
+      name: BananaPixelartExpired_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 6
-        width: 32
-        height: 26
+        y: 0
+        width: 30
+        height: 37
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 524a44d0a328a5670800000000000000
-      internalID: 8528272030221771813
+      spriteID: 28fe4af376a1648e0800000000000000
+      internalID: -1709649977788797054
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Board1_0: 8528272030221771813
+      BananaPixelartExpired_0: -1709649977788797054
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -11,10 +11,11 @@ public class CameraFollow : MonoBehaviour
 
     void Start()
     {
-        offset3 = new Vector3(offset.x, offset.y, transform.position.z);
+        
     }
     void LateUpdate()
     {
+        offset3 = new Vector3(offset.x, offset.y, transform.position.z);
         Vector3 newPosition = Vector3.Lerp(transform.position, target.position + offset3, speed * Time.deltaTime);
         if (newPosition.x > limitLeftObj.transform.position.x && newPosition.x < limitRightObj.transform.position.x)
         {

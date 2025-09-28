@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class FinishChecker : MonoBehaviour
 {
-    [SerializeField] GameObject Button_nextLevel;
-    [SerializeField] private GameObject dialougeBox, finishedText, unfinishedText;
+    [SerializeField] GameObject Button_nextLevel, Button_restartLevel;
+    [SerializeField] private GameObject dialougeBox, finishedText, unfinishedText, expiredText;
     [SerializeField] private int questGoal = 1;
 
     private bool levelIsLoading = false;
@@ -16,11 +16,20 @@ public class FinishChecker : MonoBehaviour
         {
             if (collision.GetComponent<QuestPickup>().gemsCollected >= questGoal)
             {
-                dialougeBox.SetActive(true);
-                finishedText.SetActive(true);
-                Button_nextLevel.SetActive(true);
-                GetComponent<BoxCollider2D>().enabled = false;
-                levelIsLoading = true;
+                if (collision.GetComponent<ExpireByJumps>().expired)
+                {
+                    dialougeBox.SetActive(true);
+                    expiredText.SetActive(true);
+                    Button_restartLevel.SetActive(true);
+                    GetComponent<BoxCollider2D>().enabled = false;
+                    levelIsLoading = true;
+                } else {
+                    dialougeBox.SetActive(true);
+                    finishedText.SetActive(true);
+                    Button_nextLevel.SetActive(true);
+                    GetComponent<BoxCollider2D>().enabled = false;
+                    levelIsLoading = true;
+                }
             }
             else
             {
