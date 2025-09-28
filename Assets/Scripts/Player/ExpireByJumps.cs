@@ -4,6 +4,7 @@ public class ExpireByJumps : MonoBehaviour
 {
     [SerializeField] int maxAmoutJumps;
     [SerializeField] GameObject CanvasButton_restartLevel;
+    [SerializeField] Sprite ExpiredBanana;
     MouseJump mouseJump;
     public bool expired;
     void Start()
@@ -22,7 +23,7 @@ public class ExpireByJumps : MonoBehaviour
     void expireBanana()
     {
         expired = true;
-        gameObject.GetComponent<SpriteRenderer>().color = new Color(0.588f, 0.431f, 0f);    //TODO: New skin for expired banana
+        gameObject.GetComponent<SpriteRenderer>().sprite = ExpiredBanana;  // Legacy.color = new Color(0.588f, 0.431f, 0f);    //TODO: New skin for expired banana
         CanvasButton_restartLevel.SetActive(true);
     }
 
