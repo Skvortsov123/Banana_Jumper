@@ -3,6 +3,7 @@ using UnityEngine;
 public class QuestPickup : MonoBehaviour
 {
     [SerializeField] private AudioClip pickupSound;
+    [SerializeField] private GameObject gemParticles;
 
     public int gemsCollected = 0;
     private AudioSource audioSource;
@@ -19,6 +20,7 @@ public class QuestPickup : MonoBehaviour
             audioSource.PlayOneShot(pickupSound, 0.5f);
             Destroy(other.gameObject);
             gemsCollected++;
+            Instantiate(gemParticles, other.transform.position, Quaternion.identity);
         }
     }
 }

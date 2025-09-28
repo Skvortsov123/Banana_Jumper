@@ -308,6 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupSound: {fileID: 8300000, guid: a5e106c5ffada4642aca9fedda1786db, type: 3}
+  gemParticles: {fileID: 3573728097651463441, guid: 56e22232234d82546a648c335d83ed4e, type: 3}
   gemsCollected: 0
 --- !u!82 &-5308046700789953870
 AudioSource:

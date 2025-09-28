@@ -4777,6 +4777,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4858977351141765011, guid: fa7e4d45295a5ed08bfc972fdf7de247, type: 3}
+      propertyPath: gemParticles
+      value: 
+      objectReference: {fileID: 3573728097651463441, guid: 56e22232234d82546a648c335d83ed4e, type: 3}
     - target: {fileID: 759793871287964235, guid: fa7e4d45295a5ed08bfc972fdf7de247, type: 3}
       propertyPath: m_Name
       value: Player
@@ -6087,7 +6091,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: b5c55c9b70450f54788e4957381b90e4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0

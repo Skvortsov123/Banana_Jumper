@@ -5763,12 +5763,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 344982457}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 7.62, y: -4.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1408608666}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &364565265
 GameObject:
@@ -6563,12 +6563,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524866068}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 24.52, y: -3.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1408608666}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &540220454 stripped
 Transform:
@@ -9682,7 +9682,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 2e9ea2e04df8c748687cc7cd4761b587, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -12269,6 +12269,8 @@ Transform:
   - {fileID: 381274522}
   - {fileID: 1663477763}
   - {fileID: 1810565025}
+  - {fileID: 344982462}
+  - {fileID: 524866071}
   m_Father: {fileID: 1866710567}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1425798716
@@ -13078,6 +13080,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4858977351141765011, guid: fa7e4d45295a5ed08bfc972fdf7de247, type: 3}
+      propertyPath: gemParticles
+      value: 
+      objectReference: {fileID: 3573728097651463441, guid: 56e22232234d82546a648c335d83ed4e, type: 3}
     - target: {fileID: 759793871287964235, guid: fa7e4d45295a5ed08bfc972fdf7de247, type: 3}
       propertyPath: m_Name
       value: Player
@@ -15218,5 +15224,3 @@ SceneRoots:
   - {fileID: 297035359}
   - {fileID: 1698129387}
   - {fileID: 1866710567}
-  - {fileID: 344982462}
-  - {fileID: 524866071}
