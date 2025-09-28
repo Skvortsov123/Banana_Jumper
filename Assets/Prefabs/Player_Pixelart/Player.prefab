@@ -404,4 +404,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAmoutJumps: 20
   CanvasButton_restartLevel: {fileID: 0}
+  ExpiredBanana: {fileID: -1709649977788797054, guid: 412bdced5c5548b9db5ebdb0617c9c54, type: 3}
   expired: 0
