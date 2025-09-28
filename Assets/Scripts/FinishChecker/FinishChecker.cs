@@ -4,7 +4,7 @@ public class FinishChecker : MonoBehaviour
 {
     [SerializeField] GameObject Button_nextLevel, Button_restartLevel;
     [SerializeField] private GameObject dialougeBox, finishedText, unfinishedText, expiredText;
-    [SerializeField] private int questGoal = 1;
+    public int questGoal = 1;
 
     private bool levelIsLoading = false;
 
