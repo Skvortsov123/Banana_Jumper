@@ -4,10 +4,10 @@ public class HammerHit : MonoBehaviour
 {
     [SerializeField] float delay;
     [SerializeField] float offsetDelay; //If few hammer, so they has some delay between hits, so they hits not exactly same time
-    [SerializeField] float animationSpeed; //Needs for trigger to teleport to know exactly speed of animation
     [SerializeField] GameObject positionToTeleport;
     Animator anim;
     AudioSource audioSource;
+    float animationSpeed = 1; //Constant //Needs for trigger to know exactly speed of animation
     float timer1;
     bool activeHit;
     void Start()
@@ -26,7 +26,7 @@ public class HammerHit : MonoBehaviour
             audioSource.Play();
         }
 
-        if (Time.time - timer1 > 0.2*animationSpeed && Time.time - timer1 < 0.4*animationSpeed)
+        if (Time.time - timer1 + offsetDelay > 0.2*animationSpeed && Time.time - timer1 + offsetDelay < 0.4*animationSpeed)
         {
             activeHit = true;
         }

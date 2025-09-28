@@ -13001,11 +13001,11 @@ PrefabInstance:
       objectReference: {fileID: 347129628}
     - target: {fileID: 2509520931795076517, guid: d355db90aa6ee898dbeb5f0de4dbca11, type: 3}
       propertyPath: jumpForce
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2509520931795076517, guid: d355db90aa6ee898dbeb5f0de4dbca11, type: 3}
       propertyPath: jumpForceDelta
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2927473420243845755, guid: d355db90aa6ee898dbeb5f0de4dbca11, type: 3}
       propertyPath: CanvasButton_restartLevel
